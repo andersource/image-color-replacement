@@ -1,0 +1,45 @@
+input_image_path: "sample_images/flowers.jpeg"
+output_image_path: "results/flowers_red.jpeg"
+intermeidate_representation_path: "intermediate_results"
+from_colors:
+#  Examples 1 & 2 - recolor flowers
+  - [234, 184, 95]
+  - [149, 79, 43]
+#  Example 3 - recolor stems
+#  - [80, 125, 30]
+#  - [20, 45, 24]
+to_colors:
+#  Example 1 - flowers to purple-ish
+#  - [228, 149, 234]
+#  - [138, 82, 142]
+#  Example 2 - flowers to red
+  - [250, 110, 100]
+  - [163, 61, 54]
+#  Example 3 - stems to pink
+#  - [235, 175, 237]
+#  - [143, 71, 145]
+fixed_colors:
+# Examples 1 & 2 - only flowers change
+  - [95, 121, 147]
+  - [77, 124, 20]
+  - [107, 131, 83]
+  - [255, 255, 255]
+  - [93, 120, 147]
+  - [175, 185, 187]
+  - [135, 167, 180]
+# Example 3 - only stems change
+#  - [227, 227, 215]
+#  - [93, 120, 147]
+#  - [56, 88, 127]
+#  - [171, 192, 195]
+#  - [236, 204, 119]
+#  - [218, 146, 64]
+#  - [138, 69, 40]
+latent_color_components_k: 8
+optimization_scale: 0.3  # Bigger scale will have better quality but take longer and more memory
+wolfe_conditions:
+  c1: 0.3
+  c2: 0.8
+penalty_weights: [50, 100]  # Use iterative penalty method by specifying several penalty weights
+bfgs_max_iterations: 100
+bfgs_implementation: "scipy"  # "scipy" or "scratch"

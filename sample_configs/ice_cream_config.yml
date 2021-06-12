@@ -1,0 +1,34 @@
+input_image_path: "sample_images/ice_cream.jpeg"
+output_image_path: "results/ice_cream_2.jpeg"
+from_colors:
+#  Example 1 - replace purple
+#  - [155, 135, 170]
+#  Example 2 - replace orange
+  - [251, 201, 142]
+to_colors:
+#  Example 1 - replace to red
+#  - [206, 19, 19]
+#  Example 2 - replace to brown
+  - [109, 62, 35]
+fixed_colors:
+  - [171, 94, 50]
+  - [181, 150, 145]
+  - [214, 202, 204]
+  - [152, 0, 10]
+  - [160, 159, 157]
+  - [157, 147, 138]
+  - [194, 184, 174]
+  - [213, 178, 148]
+  - [155, 135, 170]  # Purple ice cream
+  - [8, 207, 248]  # Teal ice cream
+  - [138, 246, 222]  # Green ice cream
+#  - [251, 201, 142]  # Orange ice cream
+  - [250, 197, 223]  # Pink ice cream
+latent_color_components_k: 12
+optimization_scale: 0.25
+wolfe_conditions:
+  c1: 0.3
+  c2: 0.8
+penalty_weights: [50, 100]
+bfgs_max_iterations: 100
+bfgs_implementation: "scratch"  # "scipy" or "scratch"
